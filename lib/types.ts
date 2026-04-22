@@ -22,7 +22,8 @@ export interface Alumni {
   facebook_url?: string | null
   linkedin_url?: string | null
   achievements?: string | null
-  bio?: string | null
+  motto?: string | null
+  distinctions?: string | null
 }
 
 export interface AdminProfile {

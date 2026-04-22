@@ -197,7 +197,7 @@ The UI uses a **Classic Academy** aesthetic — navy, cream, and gold palette wi
 | `facebook_url`       | text    | ☐        |                                                |
 | `linkedin_url`       | text    | ☐        |                                                |
 | `achievements`       | text    | ☐        | Free text                                      |
-| `bio`                | text    | ☐        | Free text                                      |
+| `motto`                | text    | ☐        | Free text                                      |
 
 ---
 

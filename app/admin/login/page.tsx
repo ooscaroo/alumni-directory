@@ -130,10 +130,11 @@ export default function AdminLoginPage() {
 						and keep the directory up to date.
 					</p>
 
-					<div className='mt-12 grid grid-cols-3 gap-6 text-center'>
+					<div className='mt-12 grid grid-cols-2 gap-6 text-center'>
 						{[
 							{ label: 'Add Alumni', desc: 'Create new records' },
 							{ label: 'Edit Records', desc: 'Update information' },
+							{ label: 'Delete Records', desc: 'Remove outdated information' },
 							{ label: 'Upload Photos', desc: 'Profile pictures' },
 						].map((item) => (
 							<div

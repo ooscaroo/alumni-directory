@@ -1,6 +1,8 @@
 import { createClient } from '@/lib/supabase/server';
 import Link from 'next/link';
 import { GraduationCap, BookOpen, ArrowRight, Shield } from 'lucide-react';
+import FooterSection from '@/components/FooterSection';
+import DisclaimerStrip from '@/components/DisclaimerStrip';
 
 export const revalidate = 300;
 
@@ -24,6 +26,9 @@ export default async function HomePage() {
 		<div
 			className='min-h-screen flex flex-col'
 			style={{ background: 'var(--cream)' }}>
+			{/* Announcement Banner */}
+			<DisclaimerStrip />
+
 			{/* Nav */}
 			<nav
 				className='flex items-center justify-between px-8 py-4'
@@ -33,9 +38,9 @@ export default async function HomePage() {
 				}}>
 				<div className='flex items-center gap-2.5'>
 					<div
-						className='w-8 h-8 rounded-xl flex items-center justify-center'
+						className='min-h-10 min-w-10 max-h-8 max-w-8 w-8 h-8 rounded-xl flex items-center justify-center'
 						style={{ background: 'var(--navy)' }}>
-						<GraduationCap size={16} style={{ color: 'var(--gold)' }} />
+						<GraduationCap size={20} style={{ color: 'var(--gold)' }} />
 					</div>
 					<span
 						className='font-display font-bold text-sm'
@@ -57,8 +62,7 @@ export default async function HomePage() {
 							color: 'var(--text-light)',
 							border: '1px solid var(--border)',
 							background: 'var(--cream)',
-						}}
-						>
+						}}>
 						<Shield size={11} /> Admin
 					</Link>
 				</div>
@@ -117,8 +121,8 @@ export default async function HomePage() {
 					<p
 						className='text-xl max-w-2xl mx-auto mb-12 leading-relaxed'
 						style={{ color: 'rgba(255,255,255,0.65)' }}>
-						Reconnect with your batchmates and discover where your classmates
-						are today. Browse graduates by batch year.
+						Reconnect with your batchmates and see how many you still remember.
+						Browse graduates by batch year.
 					</p>
 
 					<div className='flex flex-col sm:flex-row gap-4 justify-center'>
@@ -198,14 +202,7 @@ export default async function HomePage() {
 				</div>
 			</section>
 
-			<footer
-				className='py-6 text-center'
-				style={{ borderTop: '1px solid var(--border)' }}>
-				<p className='text-xs' style={{ color: 'var(--text-light)' }}>
-					© {new Date().getFullYear()} Sibale Academy of the Immaculate
-					Concepcion · Alumni Affairs Office
-				</p>
-			</footer>
+			<FooterSection />
 		</div>
 	);
 }

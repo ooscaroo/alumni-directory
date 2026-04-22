@@ -40,7 +40,7 @@ export default function AdminSidebar({
 
 	return (
 		<aside
-			className='w-64 flex-shrink-0 flex flex-col h-full'
+			className='w-64 shrink-0 flex flex-col h-full'
 			style={{
 				background: 'var(--navy)',
 				borderRight: '1px solid rgba(255,255,255,0.06)',
@@ -59,7 +59,7 @@ export default function AdminSidebar({
 				style={{ borderColor: 'rgba(255,255,255,0.06)' }}>
 				<div className='flex items-center gap-3'>
 					<div
-						className='w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0'
+						className='w-9 h-9 rounded-xl flex items-center justify-center shrink-0'
 						style={{
 							background: 'rgba(201,149,60,0.15)',
 							border: '1px solid rgba(201,149,60,0.25)',

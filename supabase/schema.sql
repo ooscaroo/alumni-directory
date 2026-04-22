@@ -32,7 +32,7 @@ create table public.alumni (
   facebook_url text,
   linkedin_url text,
   achievements text,
-  bio text
+  motto text
 );
 
 -- ============================================================

@@ -7,6 +7,7 @@ import {
 	Users,
 	Shield,
 } from 'lucide-react';
+import FooterSection from '@/components/FooterSection';
 
 export const revalidate = 300;
 export const metadata = {
@@ -168,14 +169,7 @@ export default async function BatchPage() {
 				)}
 			</main>
 
-			<footer
-				className='mt-16 py-8 text-center'
-				style={{ borderTop: '1px solid var(--border)' }}>
-				<p className='text-xs' style={{ color: 'var(--text-light)' }}>
-					© {new Date().getFullYear()} Sibale Academy of the Immaculate
-					Concepcion · Alumni Affairs Office
-				</p>
-			</footer>
+			<FooterSection />
 		</div>
 	);
 }

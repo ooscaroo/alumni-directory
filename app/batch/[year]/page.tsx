@@ -15,8 +15,10 @@ import {
 	MapPin,
 	Users,
 	Shield,
+	Award,
 } from 'lucide-react';
 import Image from 'next/image';
+import FooterSection from '@/components/FooterSection';
 
 /* ── Card ─────────────────────────────────────────── */
 function GraduateCard({
@@ -60,6 +62,8 @@ function GraduateCard({
 									alt={alumni.full_name}
 									className='w-14 h-14 rounded-full object-cover'
 									style={{ border: '2px solid var(--cream-dark)' }}
+									width={56}
+									height={56}
 								/>
 							) : (
 								<div
@@ -79,21 +83,17 @@ function GraduateCard({
 								style={{ color: 'var(--navy)' }}>
 								{alumni.full_name}
 							</h3>
+							{alumni.distinctions && (
+								<div className='space-y-1.5 mt-2'>
+									<div
+										className='flex items-center gap-1.5 text-xs'
+										style={{ color: 'var(--text-muted)' }}>
+										<Award size={11} className='shrink-0' />
+										<span className='truncate'>{alumni.distinctions}</span>
+									</div>
+								</div>
+							)}
 							<div className='space-y-1.5 mt-2'>
-								<div
-									className='flex items-center gap-1.5 text-xs'
-									style={{ color: 'var(--text-muted)' }}>
-									<Briefcase size={11} className='shrink-0' />
-									<span className='truncate'>
-										{alumni.current_occupation} · {alumni.company}
-									</span>
-								</div>
-								<div
-									className='flex items-center gap-1.5 text-xs'
-									style={{ color: 'var(--text-muted)' }}>
-									<BookOpen size={11} className='shrink-0' />
-									<span className='truncate'>{alumni.course}</span>
-								</div>
 								<div
 									className='flex items-center gap-1.5 text-xs'
 									style={{ color: 'var(--text-muted)' }}>
@@ -106,7 +106,7 @@ function GraduateCard({
 
 					{/* Hover hint */}
 					<div
-						className='mt-4 pt-3 flex items-center justify-end text-xs font-medium opacity-0 group-hover:opacity-100 transition-opacity'
+						className='mt-4 pt-3 flex items-center justify-end text-xs font-medium'
 						style={{
 							borderTop: '1px solid var(--border)',
 							color: 'var(--gold-muted)',
@@ -333,14 +333,7 @@ export default function BatchYearPage() {
 				)}
 			</main>
 
-			<footer
-				className='mt-16 py-8 text-center'
-				style={{ borderTop: '1px solid var(--border)' }}>
-				<p className='text-xs' style={{ color: 'var(--text-light)' }}>
-					© {new Date().getFullYear()} Sibale Academy of the Immaculate
-					Concepcion · Alumni Affairs Office
-				</p>
-			</footer>
+			<FooterSection />
 
 			{/* ── Alumni detail modal ──────────────── */}
 			{selected && <AlumniModal alumni={selected} onClose={closeModal} />}

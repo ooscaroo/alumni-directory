@@ -142,4 +142,36 @@ body {
 	color: var(--navy);
 }
 
+@keyframes scroll {
+	0% {
+		transform: translateX(0);
+	}
+	100% {
+		transform: translateX(-33.333%);
+	}
+}
+@keyframes pulse-dot {
+	0%,
+	100% {
+		opacity: 1;
+		transform: scale(1);
+	}
+	50% {
+		opacity: 0.4;
+		transform: scale(0.85);
+	}
+}
+
+.marquee-track {
+	animation: scroll 30s linear infinite;
+}
+
+.marquee-track.paused {
+	animation-play-state: paused;
+}
+
+.pulse-dot {
+	animation: pulse-dot 1.8s ease-in-out infinite;
+}
+
 /* Font families are provided by next/font via CSS variables. */
